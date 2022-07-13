@@ -52,12 +52,29 @@
 // output("inhalt von a: " + a);
 
 /* Besser: mit FOR-Schleife */
-let a = 0; // Anfangswert
-for (let i = 0; i <= 10; i++) {
-    output("in der loop: " + a);
-    a = a + 1;
-}
-output("nach der loop: " + a);
+// let a = 0; // Anfangswert
+// for (let i = 0; i <= 10; i++) {
+//     output("in der loop: " + a);
+//     a = a + 1;
+// }
+// output("nach der loop: " + a);
+
+/* 1a. Einer Variablen kann Ihr eigener Wert zugewiesen werden
+Solange die Variable existiert, bleibt dieser erhalten
+hier: Verkettung eines Strings // Transponierung
+*/
+
+// let str = "";
+// let gap = " ";
+// let addStr = "Test";
+// for (let i = 0; i <= 5; i++) {
+//     // output("in der loop: " + str);
+//     // a = a + 1;  // Numerik
+//     str = str + addStr + gap // Text
+// }
+// output("nach der loop: " + str);
+
+
 
 /*** 01. Funktionalität mit Einzelparametern */
 // --> "Ich bin Max Mütze."
@@ -106,15 +123,25 @@ function getSentenceArr(arr) {
 
 
 output(getSentenceArr2(["Ich","bin","Maxine","Mützerich"]));
-
+output(getSentenceArr2(["Ich","bin","die","coole","Maxine","Mützerich"]));
+output(getSentenceArr2(["Ich","bin","Max"]));
+output(getSentenceArr2([]));
 function getSentenceArr2(arr) {
     const gap   = " ";
     const punct = ".";
+    let str = "";
 
-    for (let i = 0; i < arr.length; i++) {
-     output(arr[i]);  // i als Index des Arrays
+    for (let i = 0; i < arr.length; i++) 
+    {
+    
+        if ( i != arr.length-1 ) {
+            str += arr[i] + gap;
+        } else {
+            str += arr[i] + punct;
+        }
     }
-}
+        return str;
+        }
 
 
 // Modul: Ausgabe in Konsole : Test
